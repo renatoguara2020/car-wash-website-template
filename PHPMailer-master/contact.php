@@ -8,10 +8,17 @@
   use PHPMailer\PHPMailer\SMTP;
   use PHPMailer\PHPMailer\Exception;
 
-  $name = $_POST(FILTER_SANITIZE_SPECIAL_CHARS['name']);
+  if(!empty($_POST['name']) || !empty($_POST['email']) || !empty($_POST['subject']) || !empty($_POST['message'])){
+
+   $name = $_POST(FILTER_SANITIZE_SPECIAL_CHARS['name']);
  $email = $_POST(FILTER_SANITIZE_EMAIL['email']);
  $m_subject = $_POST['subject'];
  $message = $_POST['message'];
+
+   
+  }
+
+  
 
     $mail = new PHPMailer(true);
     $mail->IsSMTP(); // enable SMTP
