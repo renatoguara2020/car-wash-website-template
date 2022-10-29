@@ -9,7 +9,7 @@
   use PHPMailer\PHPMailer\Exception;
 
   $name = $_POST['name'];
- $email = $_POST['email'];
+ $email = $_POST(FILTER_VALIDATE_EMAIL['email']);
  $m_subject = $_POST['subject'];
  $message = $_POST['message'];
 
