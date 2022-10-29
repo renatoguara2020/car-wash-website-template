@@ -8,7 +8,7 @@
   use PHPMailer\PHPMailer\SMTP;
   use PHPMailer\PHPMailer\Exception;
 
-  $name = $_POST['name'];
+  $name = $_POST(FILTER_SANITIZE_SPECIAL_CHARS['name']);
  $email = $_POST(FILTER_VALIDATE_EMAIL['email']);
  $m_subject = $_POST['subject'];
  $message = $_POST['message'];
